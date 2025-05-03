@@ -186,6 +186,8 @@ having MAX(workhour)>12;
 ```
 
 **Output:**
+
+
 ![image](https://github.com/user-attachments/assets/d83c5036-96c8-4732-9060-f53123160c2e)
 
 
