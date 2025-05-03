@@ -137,16 +137,16 @@ create table Department(
 
 **Question 3**
 ---
-![image](https://github.com/user-attachments/assets/5e6f4127-7ff5-4200-a30b-1f3ebbc99bac)
+![image](https://github.com/user-attachments/assets/d4832cd6-e65b-45f4-87a8-fa9ca439f974)
 
 
-```sql
-insert into Products (productid,name,category,price,stock)values(101,"Laptop","Electronics",1500,50);
+
+```sqldelete from customer where cust_city LIKE 'L%';
 ```
 
 **Output:**
+![image](https://github.com/user-attachments/assets/baa0b55f-d35f-432c-88b1-0f4126c21b4b)
 
-![image](https://github.com/user-attachments/assets/96d35f84-b858-4a2a-b2fc-fb34fab39a30)
 
 
 **Question 4**
@@ -216,23 +216,20 @@ ADD COLUMN net_salary number;
 
 **Question 8**
 ---
-![image](https://github.com/user-attachments/assets/2ebce3fd-7cd0-400b-b9b8-031fa3ecfb0d)
+![image](https://github.com/user-attachments/assets/917cf486-76e0-4e5a-9f63-0da563549c44)
+
 
 
 
 ```sql
-INSERT INTO Employee(EmployeeID,Name,Position,Department,Salary)
-values (5,'George Clark','Consultant',NULL,NULL);
-INSERT INTO Employee(EmployeeID,Name,Position,Department,Salary)
-values (7,'Noah Davis','Manager','HR',60000);
-INSERT INTO Employee(EmployeeID,Name,Position,Department,Salary)
-values (8,'Ava Miller','Consultant','IT',NULL);
+delete from customer where cust_city <> 'New York' and OUTSTANDING_AMT>5000;
 
 ```
 
 **Output:**
 
-![image](https://github.com/user-attachments/assets/30d07b32-e331-4625-a3ec-dc3ea57ac191)
+![image](https://github.com/user-attachments/assets/f062251b-acd9-4551-af56-5474b6d8e7a8)
+
 
 
 **Question 9**
@@ -251,18 +248,19 @@ create table orders (OrderID INTEGER,OrderDate TEXT,CustomerID INTEGER);
 
 **Question 10**
 ---
-![image](https://github.com/user-attachments/assets/d577e686-9cea-4278-8a03-eade18e30736)
+![image](https://github.com/user-attachments/assets/60b18da4-7a37-4ad4-bd47-8d4f30046579)
+
 
 
 ```sql
-insert into customers
-select CustomerID, Name, Address, Email
-from Old_customers
+delete from doctors where doctor_id between 2 and 4;
+
 ```
 
 **Output:**
 
-![image](https://github.com/user-attachments/assets/7fa973d5-e45c-436f-9936-4fa58b90d8d4)
+![image](https://github.com/user-attachments/assets/f843842b-b101-4c6d-940f-5e618739eb35)
+
 
 
 ## RESULT
