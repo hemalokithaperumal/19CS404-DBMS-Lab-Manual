@@ -47,50 +47,97 @@ Design a database for patient management, appointments, medical records, and bil
 
 # ER Diagram Submission
 
-NAME - SINGAMALA VENKATA SAI KUMAR REDDY
-REGISTER NUMBER - 212223230208
+NAME - HEMA LOKITHA P
+REGISTER NUMBER - 212223110014
 
 ## Scenario Chosen:
 University ER Diagram
 
 ## ER Diagram:
 
-![WhatsApp Image 2025-05-01 at 12 49 55_901bc050](https://github.com/user-attachments/assets/34881aef-54b3-4a4a-8dfc-6ae0259b9edb)
+![ER_DIAGRAM](https://github.com/user-attachments/assets/0cb90708-269b-4af0-8fa2-f88eea3ac0ba)
 
+## Entities and Attributes
+STUDENT
 
-## Entities and Attributes:
-1.Student - name, phone no., register no., subjects enrolled
+Attributes: STUDENT_ID (PK), NAME, DOB, GENDER, EMAIL, PHONE (Multivalued), ADDRESS
 
-2.Department -dept name, dept id
+ COURSE
 
-3.Program- program name, program code, courses
+Attributes: COURSE_ID (PK), COURSE_NAME, CREDITS, DEPARTMENT
 
-4.Course - course code, course name, credits
+INSTRUCTOR
 
-5.Faculty - name, subject, faculty id
+Attributes: INSTRUCTOR_ID (PK), NAME, EMAIL, PHONE, DEPARTMENT
 
-6.University - university name, university id, students and staff
+ENROLLMENT
 
-...
+Attributes: ENROLLMENT_ID (PK), STUDENT_ID (FK), COURSE_ID (FK), ENROLLDATE, GRADE
 
-## Relationships and Constraints:
-1.Student – Enrollment – Course
-```
-Many-to-Many via Enrollment(Each student can enroll in many courses; each course can have many students)
-```
-Participation: Total for Enrollment
+CLASSROOM
 
-2.Department – Program One-to-Many(A department offers many programs; each program belongs to one department)
+Attributes: CLASS_ID (PK), ROOM_NO, BUILDING, CAPACITY
 
-3.Program – Course One-to-Many(A program offers many courses; a course belongs to one program)
+SCHEDULE
 
-4.Course – Prerequisite – Course Recursive Many-to-Many(A course can have multiple prerequisites; a course can be a prerequisite for multiple other courses)
+Attributes: SCHEDULE_ID (PK), COURSE_ID (FK), CLASSROOM_ID (FK), INSTRUCTOR_ID (FK), TIME, DAY
 
-5.Instructor – Course One-to-Many(An instructor can teach multiple courses; each course is taught by one instructor)
-...
-## Extension (Prerequisite / Billing):
-Modeled with a recursive relationship on the Course entity. Represented by a separate entity Prerequisite with two foreign keys referencing Course. Ensures that one course must be completed before enrolling in another.Prerequisites are not modeled in the diagram. To add prerequisites: Create a recursive relationship on the Course entity (e.g., prerequisite_for). Billing is also not included.To include billing: Introduce a Billing or Payment entity related to Student and Program/Course, with attributes like amount, due date, status.
-## Design Choices:
-Entities were selected to reflect distinct real-world components of a university system (e.g., students, faculties, courses). Attributes were chosen based on minimal information needed to identify and manage these entities. Relationships accurately capture the natural hierarchy and many-to-many connections in educational structures. Programs containing multiple courses, and courses being part of multiple programs, support curriculum flexibility. Faculties handle courses, which is a functional and administrative link. The university is at the top of the structure, logically managing both students and faculties.
+DEPARTMENT
+
+Attributes: DEPT_ID (PK), DEPT_NAME, HOD
+
+## Relationships and Constraints
+ENROLLMENT (between STUDENT and COURSE)
+
+Cardinality: Many-to-Many
+
+Participation: Total participation from ENROLLMENT to both STUDENT and COURSE
+
+TEACHERS (between COURSE and INSTRUCTOR)
+
+Cardinality: Many-to-One (Each Course can have multiple instructors; each Instructor can teach multiple courses)
+
+Participation: Partial
+
+BELONGS (between COURSE and DEPARTMENT)
+
+Cardinality: Many-to-One
+
+Participation: Total from COURSE to DEPARTMENT
+
+SCHEDULE (associates COURSE, CLASSROOM, INSTRUCTOR)
+
+Cardinality: Many-to-Many (A Course can have multiple schedules across days/classrooms/instructors)
+
+Participation: Total from SCHEDULE to all three entities
+
+## Extension: Prerequisite / Billing
+This ER diagram does not explicitly model prerequisites or billing. If you want to model prerequisites:
+
+Add a PREREQUISITE relationship:
+
+Between COURSE (as both dependent and prerequisite)
+
+With attributes like PREREQUISITE_TYPE if needed (e.g., hard/soft prereq)
+
+For billing:
+
+Add a new entity BILLING:
+
+Attributes: BILL_ID, STUDENT_ID, AMOUNT, DUE_DATE, STATUS
+
+Related to STUDENT (1:M)
+
+## Design Choices
+Multivalued Attribute (PHONE) in STUDENT is modeled with a double oval to denote multiple phone numbers.
+
+Associative Entities (ENROLLMENT, SCHEDULE) capture the many-to-many relationships and carry extra attributes like GRADE, TIME, etc.
+
+Composite Participation: COURSE is linked to multiple entities (INSTRUCTOR, DEPARTMENT, SCHEDULE) to ensure modularity.
+
+Normalization: Attributes are properly distributed among entities to reduce redundancy and maintain atomicity.
+
+DEPARTMENT handles course organization and instructor grouping to maintain academic structure.
+
 ## RESULT
 The ER model captures students, instructors, courses, programs, and their relationships, including enrollments and prerequisites. It’s clear, efficient, and supports future database extensions.**
