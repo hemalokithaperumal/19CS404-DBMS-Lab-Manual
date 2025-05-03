@@ -47,123 +47,153 @@ SELECT column1, column2 FROM table_name WHERE condition;
 ```
 **Question 1**
 --
--- Paste Question 1 here
+![image](https://github.com/user-attachments/assets/be4064fd-3acb-47da-a1ef-da682c5a86d6)
+
 
 ```sql
--- Paste your SQL code below for Question 1
+insert into Products (productid,name,category,price,stock)values(101,"Laptop","Electronics",1500,50);
 ```
 
 **Output:**
 
-![Output1](output.png)
+![image](https://github.com/user-attachments/assets/8fbe7186-ca0b-428b-b2d9-30ef6aeb983f)
+
 
 **Question 2**
 ---
--- Paste Question 2 here
+![image](https://github.com/user-attachments/assets/8e092282-a3a9-4d44-8c4e-789f3937523a)
 
 ```sql
--- Paste your SQL code below for Question 2
+INSERT INTO Employee(EmployeeID,Name,Position,Department,Salary)
+values (5,'George Clark','Consultant',NULL,NULL);
+INSERT INTO Employee(EmployeeID,Name,Position,Department,Salary)
+values (7,'Noah Davis','Manager','HR',60000);
+INSERT INTO Employee(EmployeeID,Name,Position,Department,Salary)
+values (8,'Ava Miller','Consultant','IT',NULL);
+
 ```
 
 **Output:**
 
-![Output2](output.png)
+![image](https://github.com/user-attachments/assets/a4eb049d-2a52-405a-b008-86ca5440eecf)
+
 
 **Question 3**
 ---
--- Paste Question 3 here
+![image](https://github.com/user-attachments/assets/d7960d63-28ca-4ca5-9c02-e121446a3ae4)
+
 
 ```sql
--- Paste your SQL code below for Question 3
+UPDATE sales set sell_price=sell_price*1.05 where product_id = 15 and sale_date='2023-01-31';
 ```
 
 **Output:**
 
-![Output3](output.png)
+![image](https://github.com/user-attachments/assets/0d0f83b6-9900-4140-8aa6-9471ab275c2f)
+
 
 **Question 4**
 ---
--- Paste Question 4 here
+![image](https://github.com/user-attachments/assets/79eee033-2177-4f71-98dd-902f5fd18745)
+
 
 ```sql
--- Paste your SQL code below for Question 4
+update employees set salary=salary+500,email = "updated" 
+where job_id ="SA_REP" and commission_pct>0.15;
 ```
 
 **Output:**
 
-![Output4](output.png)
+![image](https://github.com/user-attachments/assets/73d0cc87-186d-459a-91bd-24f5a457a79a)
+
 
 **Question 5**
 ---
--- Paste Question 5 here
+![image](https://github.com/user-attachments/assets/521229f6-dde8-4de7-993d-3eeac1318a7e)
+
 
 ```sql
--- Paste your SQL code below for Question 5
+update purchases set per_unit_price =25,total_price=quantity*25 where
+purchase_date ="2022-08-15" and product_id=12;
 ```
 
 **Output:**
 
-![Output5](output.png)
+![image](https://github.com/user-attachments/assets/09e93e55-f740-4be5-bc58-5c54d05c5b39)
+
 
 **Question 6**
 ---
--- Paste Question 6 here
+![image](https://github.com/user-attachments/assets/3d802701-9502-4d94-9eaf-8675a470613f)
+
 
 ```sql
--- Paste your SQL code below for Question 6
+update suppliers set address ='58 Lakeview, Magnolia' where supplier_id =5;
 ```
 
 **Output:**
 
-![Output6](output.png)
+![image](https://github.com/user-attachments/assets/89c1a9b4-507b-4148-9c08-891960fb87f0)
+
 
 **Question 7**
 ---
--- Paste Question 7 here
+![image](https://github.com/user-attachments/assets/7dd373ad-2a84-4de0-beb4-096648b7fd7d)
+
 
 ```sql
--- Paste your SQL code below for Question 7
+select patient_id,first_name,admission_date,discharge_date
+from patients where admission_date=discharge_date;
+
 ```
 
 **Output:**
 
-![Output7](output.png)
+![image](https://github.com/user-attachments/assets/a28d4732-a8de-4d8c-a84f-f773b5035a26)
+
 
 **Question 8**
 ---
--- Paste Question 8 here
+![image](https://github.com/user-attachments/assets/4aab613a-c430-47ae-bde7-52f01a03657a)
+
 
 ```sql
--- Paste your SQL code below for Question 8
+select categoryname, description from categories order by categoryname;
 ```
 
 **Output:**
 
-![Output8](output.png)
+![image](https://github.com/user-attachments/assets/38c06f10-0eed-43b6-ad70-b378dd25bcab)
+
 
 **Question 9**
 ---
--- Paste Question 9 here
+![image](https://github.com/user-attachments/assets/2f4f5afa-92f4-4931-ab1b-ff0e63f1b4ac)
+
 
 ```sql
--- Paste your SQL code below for Question 9
+select customer_id, cust_name, city, grade,salesman_id
+from customer where city ='London' and grade >200;
 ```
 
 **Output:**
 
-![Output9](output.png)
+![image](https://github.com/user-attachments/assets/5ffc4c29-7ee9-438f-b944-3489e6b468c2)
+
 
 **Question 10**
 ---
--- Paste Question 10 here
+![image](https://github.com/user-attachments/assets/87cdf942-36ba-464a-b47a-241466850754)
+
 
 ```sql
--- Paste your SQL code below for Question 10
+update products set sell_price =(1.15)*sell_price where quantity <50 and supplier_id=10;
 ```
 
 **Output:**
 
-![Output10](output.png)
+![image](https://github.com/user-attachments/assets/e60faea9-99f5-47c1-8010-2987b863160d)
+
 
 ## RESULT
 Thus, the SQL queries to implement DML commands have been executed successfully.
